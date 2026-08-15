@@ -1,0 +1,70 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #000000;
+  --color-foreground: #ffffff;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+/* Force dark mode background globally */
+html, body {
+  background: black !important;
+  color: white !important;
+}
+
+/* Circuit connector lines (CircuitGrid component) */
+@keyframes circuit-flow {
+  to {
+    stroke-dashoffset: -220;
+  }
+}
+
+.circuit-flow {
+  animation: circuit-flow 3.2s linear infinite;
+}
+
+@keyframes circuit-node-pulse {
+  0%, 100% {
+    opacity: 0.45;
+    r: 2.5;
+  }
+  50% {
+    opacity: 1;
+    r: 4;
+  }
+}
+
+.circuit-node-pulse {
+  animation: circuit-node-pulse 2.4s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+/* Ambient security-console scanline sweep (CyberBackdrop component) */
+@keyframes cyber-scanline {
+  0% {
+    top: -15%;
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    top: 115%;
+    opacity: 0;
+  }
+}
+
+.cyber-scanline {
+  animation: cyber-scanline 7s linear infinite;
+}
